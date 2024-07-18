@@ -94,6 +94,11 @@ header .main-nav.sticky {
     font-size: 1.4rem;
     cursor: pointer;
     display: none;
+    transition: top 0.5 ease;
+}
+
+.main-nav.sticky :is(.menu-btn, .nav-links .cancel-btn){
+    top: 10px;
 }
 
 .main-nav .d-flex {
@@ -122,7 +127,6 @@ header .main-nav.sticky {
     background-color: #000;
 }
 
-.main-nav.sticky .nav-links .active,
 .main-nav.sticky .nav-links li:hover {
     background-color: #fff;
 }
@@ -133,7 +137,6 @@ header .main-nav.sticky {
     font-weight: 500;
 }
 
-.main-nav.sticky .nav-links .active a,
 .main-nav.sticky .nav-links li:hover a {
     color: #000;
 }
@@ -525,6 +528,71 @@ textarea::placeholder {
     font-weight: 500;
 }
 
+/* Footer Section */
+
+.footer {
+    background-color: #000;
+    color: #fff;
+}
+
+.footer .info-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info-section .info-details {
+    width: calc(100% / 4 - 20px);
+}
+
+.info-details :is(h1, h4) {
+    margin-bottom: 10px;
+}
+
+.info-details h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.info-details .contact-link {
+    margin-bottom: 7px;
+}
+
+.contact-link i {
+    margin-right: 4px;
+}
+
+.info-details input {
+    border-radius: 40px;
+}
+
+.info-details button {
+    margin: 15px 0;
+    padding: 6px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.info-details .social-links a{
+    color: #fff;
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
+
+.footer .d-flex {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+}
+
+.footer .footer-section :is(p, p a) {
+    color: #ACACAD;
+    font-size: 1rem;
+}
 
 /* Media Queries */
 
@@ -553,7 +621,8 @@ textarea::placeholder {
     }
 
     .services .py,
-    .guards .py {
+    .guards .py,
+    .footer .py {
         padding: 0 30px;
     }
 }
@@ -624,7 +693,8 @@ textarea::placeholder {
     }
 
     .services-items .services-item,
-    .guards-list .guard {
+    .guards-list .guard,
+    .info-section .info-details {
         width: calc(100% / 2 - 20px);
     }
 
@@ -672,11 +742,23 @@ textarea::placeholder {
     }
 
     .services-items .services-item,
-    .guards-list .guard {
+    .guards-list .guard,
+    .info-section .info-details {
         width: 100%;
     }
 
     .contact .py {
         margin: 0 30px;
+    }
+
+    .info-section .info-details {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer p {
+        text-align: center;
     }
 }

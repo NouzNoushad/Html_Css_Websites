@@ -26,10 +26,12 @@ const scrollBtn =document.querySelector(".scroll-btn a");
 
 menuBtn.onclick = function () {
     navBar.classList.add("active");
+    scrollBtn.style.pointerEvents = "none";
 }
 
 cancelBtn.onclick = function () {
     navBar.classList.remove("active");
+    scrollBtn.style.pointerEvents = "auto";
 }
 
 window.onscroll = function() {
