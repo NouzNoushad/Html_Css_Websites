@@ -301,9 +301,10 @@ section.services {
     justify-content: center;
     font-size: 2rem;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 40px;
     position: relative;
+    text-align: center;
 }
 
 .main .main-title::before {
@@ -366,6 +367,40 @@ section.services {
 .services-item .detail-box .quote-button {
     padding: 8px 30px;
     margin-top: 8px;
+}
+
+/* Review Section */
+
+.review .testimonials .swiper-navBtn {
+    height: 2.8rem;
+    width: 2.8rem;
+    background-color: #000;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.testimonials .swiper-navBtn::before,
+.testimonials .swiper-navBtn::after {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.testimonials .testi-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 15px;
+}
+
+.testimonials .testi-content img {
+    height: 120px;
+}
+
+.testimonials .testi-content p {
+    max-width: 900px;
+    text-align: center;
+    margin: 0 30px;
 }
 
 /* Media Queries */
@@ -465,6 +500,10 @@ section.services {
 
     .services-items .services-item {
         width: calc(100% / 2 - 20px);
+    }
+
+    .main .main-title {
+        font-size: 1.8rem;
     }
 }
 

@@ -1,3 +1,22 @@
+// Swiper
+
+const swiper = new Swiper('.mySwiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    autoplay: {
+        
+    }
+  });
+
+
 const navBar = document.querySelector(".main-nav");
 const menuBtn = document.querySelector(".menu-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
@@ -22,3 +41,4 @@ window.onscroll = function() {
         scrollBtn.style.display = "none";
     }
 }
+
