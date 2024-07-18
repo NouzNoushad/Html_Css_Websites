@@ -123,7 +123,7 @@ header .main-nav.sticky {
 }
 
 .main-nav.sticky .nav-links .active,
-.main-nav.sticky  .nav-links li:hover{
+.main-nav.sticky .nav-links li:hover {
     background-color: #fff;
 }
 
@@ -463,6 +463,69 @@ textarea::placeholder {
     text-transform: uppercase;
 }
 
+/* Guards Section */
+
+.guards .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guards .main .main-title {
+    margin-bottom: 10px;
+}
+
+.main .main-p {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.guards .guards-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+
+}
+
+.guards-list .guard {
+    width: calc(100% / 3 - 20px);
+    position: relative;
+}
+
+.guards-list .guard .img-box {
+    width: 100%;
+    display: flex;
+}
+
+.guard .img-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.guards .guard .guard-details {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.guard .guard-details :is(h3, h4) {
+    font-weight: 500;
+}
+
+
 /* Media Queries */
 
 @media screen and (max-width: 1350px) {
@@ -489,7 +552,8 @@ textarea::placeholder {
         width: 60%;
     }
 
-    .services .py {
+    .services .py,
+    .guards .py {
         padding: 0 30px;
     }
 }
@@ -554,11 +618,13 @@ textarea::placeholder {
         font-size: 0.9rem;
     }
 
-    .services .services-items {
+    .services .services-items,
+    .guards .guards-list {
         row-gap: 40px;
     }
 
-    .services-items .services-item {
+    .services-items .services-item,
+    .guards-list .guard {
         width: calc(100% / 2 - 20px);
     }
 
@@ -605,7 +671,8 @@ textarea::placeholder {
         width: 100%;
     }
 
-    .services-items .services-item  {
+    .services-items .services-item,
+    .guards-list .guard {
         width: 100%;
     }
 
