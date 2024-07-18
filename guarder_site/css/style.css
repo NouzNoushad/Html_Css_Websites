@@ -403,6 +403,66 @@ section.services {
     margin: 0 30px;
 }
 
+/* Contact Section */
+
+.contact {
+    background-image: url("../images/contact-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.contact .container {
+    position: relative;
+}
+
+.contact .main .main-title {
+    color: #fff;
+}
+
+.contact .contact-form {
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 30px;
+}
+
+input,
+textarea {
+    outline: none;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+    text-transform: uppercase;
+    color: #000;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form .quote-button {
+    text-transform: uppercase;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1350px) {
@@ -547,5 +607,9 @@ section.services {
 
     .services-items .services-item  {
         width: 100%;
+    }
+
+    .contact .py {
+        margin: 0 30px;
     }
 }
