@@ -9,6 +9,7 @@
     --active-color: #FFBE33;
     --button-bg: #FFBE33;
     --hover-color: #e99f00;
+    --ad-bg: #222831;
 }
 
 * {
@@ -175,6 +176,94 @@ header .nav-bar {
     background-color: var(--button-bg);
     height: 1rem;
     width: 1rem;
+}
+
+/* Menu Section */
+
+section {
+    padding: 5rem 0;
+}
+
+.menu .menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.menu .ad-items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.ad-items .ad-item {
+    background-color: var(--ad-bg);
+    width: calc(100% / 2 - 20px);
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    color: var(--white-color);
+}
+
+.ad-item .ad-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid var(--active-color);
+}
+
+.ad-item .ad-img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ad-item .ad-content h3 {
+    font-family: var(--cursive-font);
+    font-size: 1.5rem;
+}
+
+.ad-content .discount {
+    font-family: var(--cursive-font);
+    font-size: 2.5rem;
+    margin: 10px 0 10px 0;
+    font-weight: 500;
+}
+
+.ad-content .discount span {
+    font-family: var(--cursive-font);
+    font-size: 1rem;
+}
+
+.menu-container h2 {
+    margin: 40px 0;
+    font-family: var(--cursive-font);
+    font-size: 2.5rem;
+}
+
+.menu-container .categories {
+    display: flex;
+    column-gap: 10px;
+}
+
+.categories .category {
+    padding: 8px 25px;
+    border-radius: 30px;
+    color: var(--ad-bg);
+    transition: all 0.5s ease;
+}
+
+.categories .category.active,
+.categories .category:hover {
+    background-color: var(--ad-bg);
+    color: var(--white-color);
 }
 
 /* Media Queries */
