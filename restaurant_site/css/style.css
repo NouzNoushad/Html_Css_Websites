@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+    --normal-font: "Open Sans", sans-serif;
+    --cursive-font: 'Dancing Script', cursive;
+    --max-width: 1200px;
+    --white-color: #fff;
+    --black-color: #000;
+    --active-color: #FFBE33;
+    --button-bg: #FFBE33;
+    --hover-color: #e99f00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--normal-font);
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+/* Header Section */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12vh;
+    background-color: black;
+    z-index: 1000;
+}
+
+.container {
+    height: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+header .nav-bar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+}
+
+.nav-bar :is(.menu-btn, .cancel-btn){
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    color: var(--white-color);
+    font-size: 1.3rem;
+    transform: translateY(-50%);
+}
+
+.nav-bar .cancel-btn {
+    top: 70px;
+    right: 30px;
+}
+
+.nav-bar .nav-title h1{
+    font-family: var(--cursive-font);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white-color);
+}
+
+.nav-bar .links-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 5rem;
+}
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.nav-bar .nav-links a {
+    color: var(--white-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+
+.nav-bar .nav-links a:hover,
+.nav-bar .nav-links a.active {
+    color: var(--active-color);
+}
+
+.nav-bar .nav-details {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-details i {
+    color: var(--white-color);
+    margin-right: 15px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.nav-bar .nav-details i:hover {
+    color: var(--active-color);
+}
+
+.nav-bar .nav-details button {
+    padding: 10px 30px;
+    background-color: var(--button-bg);
+    color: var(--white-color);
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.nav-bar .nav-details button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1350px) {
+    header .py {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    
+}
+
+@media screen and (max-width: 980px) {
+    .nav-bar .links-box{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        max-width: 400px;
+        width: 100%;
+        background-color: var(--black-color);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--white-color);
+        row-gap: 30px;
+        transition: all 0.5s ease;
+    }
+
+    .nav-bar.active .links-box {
+        right: 0;
+    }
+
+    .nav-bar .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 30px;
+    }
+
+    .nav-bar .nav-details{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .nav-bar :is(.menu-btn, .cancel-btn){
+        display: block;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    
+}
+
