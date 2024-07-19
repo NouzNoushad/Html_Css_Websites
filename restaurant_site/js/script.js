@@ -9,3 +9,14 @@ menuBtn.onclick = function () {
 cancelBtn.onclick = function () {
     navBar.classList.remove("active");
 }
+
+// Swiper
+
+const swiper = new Swiper('.mySwiper', {
+    direction: 'horizontal',
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    autoplay: {}
+});
