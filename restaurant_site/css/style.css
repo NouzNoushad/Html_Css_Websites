@@ -444,6 +444,64 @@ input::placeholder {
     background-color: #8d8c8c;
 }
 
+/* Customer Section */
+
+.customers h2 {
+    font-size: 2.3rem;
+    font-family: var(--cursive-font);
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.customers .swiper-slide .customer-review {
+    background-color: var(--ad-bg);
+    border-radius: 4px;
+    padding: 30px 25px;
+    color: var(--white-color);
+}
+
+.customer-review p {
+    font-size: 0.9rem;
+}
+
+.customer-review h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+.customers .swiper-slide .customer-img {
+    margin-top: 30px;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 5px solid var(--active-color);
+    position: relative;
+}
+
+.swiper-slide .customer-img::before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 5px;
+    left: 45%;
+    transform: rotate(45deg) translateX(-50%);
+    background-color: var(--active-color);
+}
+
+.swiper-slide .customer-img img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+section.customers {
+    padding-top: 20px;
+}
+
+
 /* Media Queries */
 
 @media screen and (max-width: 1350px) {
@@ -586,6 +644,10 @@ input::placeholder {
     .book-content .book-details,
     .book-content .book-map {
         width: 100%;
+    }
+
+    section {
+        padding: 4rem 0;
     }
 }
 

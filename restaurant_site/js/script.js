@@ -13,10 +13,10 @@ cancelBtn.onclick = function () {
 }
 
 window.onscroll = function () {
-    if(document.documentElement.scrollTop > 20){
+    if (document.documentElement.scrollTop > 20) {
         scrollBtn.style.display = "block";
         header.classList.add("sticky");
-    }else {
+    } else {
         scrollBtn.style.display = "none";
         header.classList.remove("sticky");
     }
@@ -31,4 +31,22 @@ const swiper = new Swiper('.mySwiper', {
         el: '.swiper-pagination',
     },
     autoplay: {}
+});
+
+const cSwiper = new Swiper('.cSwiper', {
+    direction: 'horizontal',
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {},
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            spaceBetweenSlides: 50
+        },
+        980: {
+            slidesPerView: 2,
+            spaceBetweenSlides: 50
+        }
+    }
 });
