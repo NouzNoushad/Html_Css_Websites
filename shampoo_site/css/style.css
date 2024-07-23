@@ -5,6 +5,7 @@
     --open-font: "Open Sans", sans-serif;
     --max-width: 1300px;
     --appbar-color: #90BC79;
+    --appbar-shadow-color: #59744a;
     --white-color: #fff;
     --black-color: #000;
     --nav-gap: 40px;
@@ -43,6 +44,10 @@ button {
     margin: 0 auto;
 }
 
+section {
+    padding: 5rem 0;
+}
+
 /* Navbar Section */
 
 nav {
@@ -54,6 +59,7 @@ nav {
     height: 14vh;
     z-index: 1000;
     transition: all 0.5s ease;
+    box-shadow: 0px 1px 4px var(--appbar-shadow-color);
 }
 
 nav .container {
@@ -70,7 +76,7 @@ nav .container {
 .navbar .nav-content :is(.menu-btn, .nav-links .cancel-btn) {
     position: absolute;
     top: 45px;
-    right: 10px;
+    right: 30px;
     transform: translateY(-50%);
     border: 3px solid rgba(255, 255, 255, 0.315);
     padding: 10px 20px;
@@ -129,12 +135,12 @@ nav .container {
     transition: all 0.6s ease;
 }
 
-.nav-links li:hover .sub-links{
+.nav-links li:hover .sub-links {
     opacity: 1;
     top: 25px;
 }
 
-.sub-links li{
+.sub-links li {
     padding: 5px 15px;
     transition: all 0.5s ease;
 }
@@ -149,29 +155,126 @@ nav .container {
     background-color: var(--sublink-dark-color);
 }
 
-.nav-content button {
+button {
     background-color: var(--dark-color);
     color: var(--white-color);
     font-size: 1rem;
     font-weight: 500;
     padding: 12px 30px;
     border-radius: 5px;
+    border: 3px solid transparent;
     font-family: var(--open-font);
+}
+
+/* Home Section */
+
+main {
+    position: relative;
+    background-image: url("../img/bg.png");
+    background-color: var(--appbar-color);
+}
+
+main::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff23;
+    clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 35% 100%);
+}
+
+.home .container {
+    margin-top: 14vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.home .home-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.home-content .home-details {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 18px;
+    color: var(--white-color);
+    font-family: var(--open-font);
+}
+
+.home-details h4 {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.home-details .title h2 {
+    font-family: var(--normal-font);
+    font-size: 3.5rem;
+    line-height: 4rem;
+}
+
+.title .thin {
+    color: var(--dark-color);
+    font-weight: 100;
+}
+
+.home-details p {
+    font-weight: 500;
+}
+
+.home-details .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.buttons .contact-btn {
+    color: var(--dark-color);
+    border: 3px solid var(--dark-color);
+    background-color: transparent;
+    transition: all 0.4s ease;
+}
+
+.buttons .contact-btn:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.home-content .home-img {
+    width: 50%;
+    height: 100%;
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Media Queries */
 
-@media screen and (max-width: 1350px){
+@media screen and (max-width: 1350px) {
     .container {
         padding: 0 30px;
     }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {}
 
-}
-
-@media screen and (max-width: 980px){
+@media screen and (max-width: 980px) {
     .navbar .nav-content :is(.menu-btn, .nav-links .cancel-btn) {
         display: block;
     }
@@ -199,8 +302,35 @@ nav .container {
     .nav-content button {
         display: none;
     }
+
+    .home .home-content {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    .home-content :is(.home-details, .home-img) {
+        width: 95%;
+        align-items: center;
+    }
+
+    .home-details .title h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .home-details p {
+        text-align: center;
+    }
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 760px) {
 
+    .home-details .title h2 {
+        font-size: 2.5rem;
+        line-height: 2.8rem;
+    }
+
+    button {
+        padding: 12px 25px;
+    }
 }
