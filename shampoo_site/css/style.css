@@ -48,6 +48,19 @@ section {
     padding: 5rem 0;
 }
 
+/* Scroll Up Button */
+
+.scroll-btn a {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    padding: 12px 15px;
+    border-radius: 50%;
+    background-color: var(--appbar-color);
+    color: var(--white-color);
+    z-index: 1000;
+}
+
 /* Navbar Section */
 
 nav {
@@ -59,6 +72,9 @@ nav {
     height: 14vh;
     z-index: 1000;
     transition: all 0.5s ease;
+}
+
+nav.sticky {
     box-shadow: 0px 1px 4px var(--appbar-shadow-color);
 }
 
@@ -108,8 +124,13 @@ nav .container {
 }
 
 .nav-links .nav-link {
+    height: 100%;
     color: var(--dark-color);
     transition: all 0.5s ease;
+}
+
+.nav-link i {
+    margin: 0 5px;
 }
 
 .nav-links .nav-link.active,
@@ -133,6 +154,7 @@ nav .container {
     padding: 8px 0px;
     border-radius: 5px;
     transition: all 0.6s ease;
+    z-index: 1000;
 }
 
 .nav-links li:hover .sub-links {
@@ -361,7 +383,7 @@ main::before {
     color: #5f5f5f;
 }
 
-.about-product button {
+.shop-btn {
     background-color: var(--appbar-color);
 }
 
