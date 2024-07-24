@@ -12,6 +12,7 @@
     --dark-color: #1C2900;
     --sublink-color: #F5F5F5;
     --sublink-dark-color: #e0e0e0;
+    --p-color: #5f5f5f;
 }
 
 * {
@@ -190,13 +191,15 @@ button {
 
 /* Home Section */
 
-main {
+main,
+.offer {
     position: relative;
     background-image: url("../img/bg.png");
     background-color: var(--appbar-color);
 }
 
-main::before {
+main::before,
+.offer::before {
     position: absolute;
     content: "";
     top: 0;
@@ -380,11 +383,104 @@ main::before {
 }
 
 .about-product p {
-    color: #5f5f5f;
+    color: var(--p-color);
 }
 
 .shop-btn {
     background-color: var(--appbar-color);
+}
+
+/* Offer Section */
+
+.offer .offer-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.offer-content .offer-img {
+    width: 50%;
+}
+
+.offer-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.offer-content .offer-box {
+    width: 50%;
+    background-color: var(--white-color);
+    padding: 25px;
+}
+
+.offer-box .offer-card .border {
+    border: 3px solid rgba(212, 212, 212, 0.438);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--open-font);
+}
+
+.offer-card p {
+    color: var(--p-color);
+    text-align: center;
+}
+
+.offer-card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: var(--normal-font);
+    text-transform: uppercase;
+}
+
+.offer-card h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--appbar-color);
+    font-family: var(--normal-font);
+    margin: 10px 0;
+}
+
+.offer-card h4 {
+    font-family: var(--normal-font);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.offer-card .timer-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 25px 0px;
+}
+
+.timer-row .offer-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-row .offer-time h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: var(--normal-font);
+}
+
+.timer-row .offer-time h5 {
+    font-size: 1rem;
+    font-weight: 200;
+    font-style: italic;
+    color: var(--p-color);
+    font-family: var(--normal-font);
 }
 
 /* Media Queries */
@@ -395,7 +491,19 @@ main::before {
     }
 }
 
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1200px) {
+    .offer-card h3 {
+        font-size: 1.9rem;
+    }
+
+    .offer-card h1 {
+        font-size: 3.3rem;
+    }
+
+    .timer-row .offer-time h2 {
+        font-size: 2.2rem;
+    }
+}
 
 @media screen and (max-width: 980px) {
     .navbar .nav-content :is(.menu-btn, .nav-links .cancel-btn) {
@@ -449,20 +557,30 @@ main::before {
         width: calc(100% / 2 - 20px);
     }
 
-    .about-content .about-description {
+    .about-content .about-description,
+    .offer .offer-content {
         flex-direction: column;
     }
 
-    .about-description :is(.about-img, .about-product) {
+    .about-description :is(.about-img, .about-product),
+    .offer-content :is(.offer-img, .offer-box) {
         width: 95%;
-    } 
+    }
 
     .about-product h2 {
         font-size: 2.2rem;
     }
+
+    .timer-row .offer-time h2 {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width: 760px) {
+
+    .container {
+        padding: 0 25px;
+    }
 
     .home-details .title h2 {
         font-size: 2.5rem;
@@ -473,11 +591,24 @@ main::before {
         padding: 12px 25px;
     }
 
-    .about-boxes .about-box {
+    .about-boxes .about-box,
+    .offer-content :is(.offer-img, .offer-box) {
         width: 100%;
     }
 
     .about-product h2 {
         font-size: 2rem;
+    }
+
+    .offer-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .offer-card h1 {
+        font-size: 2rem;
+    }
+
+    .timer-row .offer-time h2 {
+        font-size: 1.8rem;
     }
 }
