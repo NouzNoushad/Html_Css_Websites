@@ -198,15 +198,13 @@ button {
 
 /* Home Section */
 
-main,
-.offer {
+.bg-design {
     position: relative;
     background-image: url("../img/bg.png");
     background-color: var(--appbar-color);
 }
 
-main::before,
-.offer::before {
+.bg-design::before{
     position: absolute;
     content: "";
     top: 0;
@@ -565,6 +563,64 @@ main::before,
     color: var(--p-color);
 }
 
+.use .main-title :is(h2, p) {
+    color: var(--white-color);
+}
+
+.use .use-items {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    color: var(--white-color);
+}
+
+.use-items .use-item {
+    width: calc(100% / 3 - 30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: var(--open-font);
+    gap: 20px;
+}
+
+.use-item .use-img {
+    position: relative;
+    padding: 50px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, .2);
+}
+
+.use-img i {
+    font-size: 2.2rem;
+    color: var(--dark-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.use-item .use-title {
+    font-family: var(--normal-font);
+    font-weight: 600;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.use-item .use-title::before {
+    position: absolute;
+    content: "";
+    top: 35px;
+    left: 50%;
+    height: 3px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, .2);
+    transform: translateX(-50%);
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1350px) {
@@ -669,6 +725,14 @@ main::before,
     .features-items .features-item {
         width: 100%;
     }
+
+    .use .use-items {
+        flex-direction: column;
+    }
+
+    .use-items .use-item {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 760px) {
@@ -709,5 +773,9 @@ main::before,
 
     .main-title h2 {
         font-size: 2rem;
+    }
+
+    .use-items .use-item {
+        width: 95%;
     }
 }
