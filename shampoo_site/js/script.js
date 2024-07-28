@@ -21,3 +21,12 @@ window.onscroll = function() {
         nav.classList.remove("sticky");
     }
 }
+
+const swiper = new Swiper('.mySwiper', {
+    direction: 'horizontal',
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    autoplay: {}
+});

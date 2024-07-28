@@ -566,7 +566,8 @@ button {
 
 /* How to Use Section */
 
-.use .main-title :is(h2, p) {
+.use .main-title :is(h2, p),
+.testimonials .main-title :is(h2, p) {
     color: var(--white-color);
 }
 
@@ -700,6 +701,50 @@ button {
     color: var(--white-color);
 }
 
+/* Testimonials Section */
+
+.testimonials .testimonials-items {
+    margin-top: 30px;
+}
+
+.testimonials-items .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--normal-font);
+    text-align: center;
+}
+
+.testimonials-items .swiper-slide .client-img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    padding: 8px;
+    border: 3px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.client-img img {
+    border-radius: 70%;
+}
+
+.swiper-slide p {
+    width: 60%;
+    color: var(--white-color);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.swiper-slide h3 {
+    color: var(--dark-color);
+}
+
+.swiper-slide h4 {
+    font-style: italic;
+    color: var(--white-color);
+    font-weight: 300;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1350px) {
@@ -813,7 +858,8 @@ button {
         flex-direction: column;
     }
 
-    .use-items .use-item {
+    .use-items .use-item,
+    .swiper-slide p  {
         width: 90%;
     }
 }
@@ -858,7 +904,8 @@ button {
         font-size: 2rem;
     }
 
-    .use-items .use-item {
+    .use-items .use-item,
+    .swiper-slide p {
         width: 95%;
     }
 
