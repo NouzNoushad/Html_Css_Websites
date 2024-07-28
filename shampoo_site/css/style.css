@@ -696,7 +696,7 @@ button {
     transition: all 0.5s ease;
 }
 
-.product:hover .add-button {
+.product:hover .add-button{
     background-color: var(--appbar-color);
     color: var(--white-color);
 }
@@ -743,6 +743,56 @@ button {
     font-style: italic;
     color: var(--white-color);
     font-weight: 300;
+}
+
+/* Blog Section  */
+
+.blog .blog-posts {
+    height: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    /* background-color: red; */
+}
+
+.blog-posts .blog-post {
+    height: 100%;
+    width: calc(100% / 3 - 20px);
+    border: 3px solid rgb(243, 243, 243);
+    padding: 20px;
+    transition: all 0.5s ease;
+    font-family: var(--open-font);
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    
+}
+
+.blog-post .blog-img {
+    height: 50%;
+    /* background-color: blue; */
+}
+
+.blog-post .blog-content {
+    height: 50%;
+    /* background-color: green; */
+}
+
+.blog-post .add-button {
+    align-self: flex-start;
+    background-color: transparent;
+    border: 3px solid var(--appbar-color);
+    color: var(--appbar-color);
+    padding: 8px 15px;
+    transition: all 0.5s ease;
+}
+
+.blog-post:hover .add-button{
+    background-color: var(--appbar-color);
+    color: var(--white-color);
 }
 
 /* Media Queries */
