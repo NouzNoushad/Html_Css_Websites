@@ -755,11 +755,10 @@ button {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    /* background-color: red; */
 }
 
 .blog-posts .blog-post {
-    height: 100%;
+    height: 80vh;
     width: calc(100% / 3 - 20px);
     border: 3px solid rgb(243, 243, 243);
     padding: 20px;
@@ -768,20 +767,57 @@ button {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    
+}
+
+.blog-posts .blog-post:hover {
+    border-color: transparent;
+    -webkit-box-shadow: 0 0 35px rgba(144, 188, 121, .25);
+    box-shadow: 0 0 35px rgba(144, 188, 121, .25);
 }
 
 .blog-post .blog-img {
     height: 50%;
-    /* background-color: blue; */
 }
 
 .blog-post .blog-content {
     height: 50%;
-    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.blog-post .add-button {
+.blog-content h3 {
+    font-family: var(--normal-font);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blog-content h3:hover {
+    color: var(--appbar-color);
+}
+
+.blog-content .blog-views {
+    display: flex;
+    gap: 20px;
+    color: #7F7F7F;
+}
+
+.blog-views i {
+    font-size: 0.8rem;
+    margin-right: 6px;
+}
+
+.blog-views span {
+    font-size: 0.9rem;
+}
+
+.blog-content p {
+    color: var(--p-color);
+}
+
+.blog-content .add-button {
+    margin-top: 10px;
     align-self: flex-start;
     background-color: transparent;
     border: 3px solid var(--appbar-color);
@@ -912,6 +948,11 @@ button {
     .swiper-slide p  {
         width: 90%;
     }
+
+    .blog-posts .blog-post {
+        height: 100%;
+        width: calc(100% / 2 - 20px);
+    }
 }
 
 @media screen and (max-width: 760px) {
@@ -959,7 +1000,8 @@ button {
         width: 95%;
     }
 
-    .products-wrapper .product {
+    .products-wrapper .product,
+    .blog-posts .blog-post {
         width: 100%;
     }
 }
