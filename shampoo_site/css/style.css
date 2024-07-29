@@ -564,12 +564,15 @@ button {
     color: var(--p-color);
 }
 
-/* How to Use Section */
+/* Main title */
 
 .use .main-title :is(h2, p),
-.testimonials .main-title :is(h2, p) {
+.testimonials .main-title :is(h2, p),
+.contact .main-title :is(h2, p) {
     color: var(--white-color);
 }
+
+/* How to Use Section */
 
 .use .use-items {
     margin-top: 50px;
@@ -831,6 +834,35 @@ button {
     color: var(--white-color);
 }
 
+/* Contact Section */
+
+.contact .main-title {
+    margin-bottom: 40px;
+}
+
+.contact .email-input {
+    border: 3px solid rgba(224, 224, 224, 0.39);
+    padding: 12px 20px;
+    border-radius: 5px;
+    max-width: 60%;
+    margin: 0 auto;
+    background-color: rgba(224, 224, 224, 0.288);
+    display: flex;
+}
+
+.email-input input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    flex-grow: 1;
+    font-size: 1rem;
+}
+
+.email-input i {
+    font-size: 1.5rem;
+    color: var(--white-color);
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1350px) {
@@ -854,6 +886,15 @@ button {
 
     .products-wrapper .product {
         width: calc(100% / 2 - 20px);
+    }
+
+    .blog-posts .blog-post {
+        height: 100%;
+        width: calc(100% / 2 - 20px);
+    }
+
+    .contact .email-input {
+        max-width: 70%;
     }
 }
 
@@ -949,9 +990,8 @@ button {
         width: 90%;
     }
 
-    .blog-posts .blog-post {
-        height: 100%;
-        width: calc(100% / 2 - 20px);
+    .contact .email-input {
+        max-width: 90%;
     }
 }
 
@@ -1003,5 +1043,9 @@ button {
     .products-wrapper .product,
     .blog-posts .blog-post {
         width: 100%;
+    }
+
+    .contact .email-input {
+        max-width: 100%;
     }
 }
