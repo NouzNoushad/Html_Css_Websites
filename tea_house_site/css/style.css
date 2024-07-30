@@ -7,9 +7,12 @@
     --white-color: #fff;
     --black-color: #000;
     --primary-color: #88B44E;
+    --text-color: #252C30;
 }
 
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,7 +21,6 @@
 html,
 body {
     scroll-behavior: smooth;
-    background-color: #272727;
 }
 
 li {
@@ -153,7 +155,7 @@ nav .nav-content {
 
 .links li .sub-links {
     min-width: 150px;
-    display: block;
+    display: none;
     opacity: 0;
     position: absolute;
     background-color: rgb(240, 240, 240);
@@ -166,6 +168,7 @@ nav .nav-content {
 
 .links li:hover .sub-links {
     opacity: 1;
+    display: block;
     top: 75px;
 }
 
@@ -178,6 +181,61 @@ nav .nav-content {
     font-size: 1rem;
     font-weight: 400;
     color: var(--dark-color);
+}
+
+/* Home Section */
+
+.home {
+    margin-top: 12vh;
+    height: 100svh;
+    background-image: url("../img/carousel-2.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    border-image: linear-gradient(rgba(136, 180, 78, .7), rgba(136, 180, 78, .7)) fill 1;
+}
+
+.home .container {
+    height: 100%;
+}
+
+.home .home-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.home-content h4 {
+    font-family: var(--open-sans-font);
+    font-size: 1.5rem;
+}
+
+.home-content h4 span {
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+.home-content .title h1 {
+    font-size: 5rem;
+    text-align: center;
+    font-weight:800;
+    font-family: var(--playfair-font);
+    color: var(--text-color);
+    width: 50%;
+    margin: 0 auto;
+}
+
+.home-content .explore {
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
 }
 
 /* Media Queries */
@@ -246,14 +304,31 @@ nav .nav-content {
     .links li:hover .sub-links {
         top: 30px;
     }
+
+    .home-content .title h1 {
+        font-size: 4rem;
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 760px) {
 
     nav {
         height: 9.8vh;
-    };
+    }
+
     .nav-content .nav-logo {
         max-width: 120px;
+    }
+
+    .home-content .title h1 {
+        font-size: 3rem;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .home-content .title h1 {
+        font-size: 2.5rem;
     }
 }
