@@ -52,6 +52,19 @@ section {
     padding: 5rem 0;
 }
 
+/* Scroll Up Button */
+
+.scroll-btn a {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 15px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    z-index: 1000;
+}
+
 /* Navbar Section */
 
 nav {
