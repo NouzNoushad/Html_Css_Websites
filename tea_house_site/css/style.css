@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swapz");
+
+:root {
+    --playfair-font: "Playfair Display";
+    --open-sans-font: "Open Sans", sans-serif;
+    --max-width: 1150px;
+    --white-color: #fff;
+    --black-color: #000;
+    --primary-color: #88B44E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    background-color: #272727;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+/* Navbar Section */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white-color);
+    z-index: 1000;
+    transition: all 0.5s ease;
+    height: 12vh;
+    width: 100%;
+}
+
+nav .container {
+    height: 100%;
+    position: relative;
+}
+
+nav .nav-content {
+    height: 100%;
+}
+
+.nav-content .nav-logo {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    max-width: 170px;
+}
+
+.nav-content .nav-links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.nav-links .links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.links li {
+    height: 100%;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--black-color);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--open-sans-font);
+    transition: all 0.4s ease;
+}
+
+.links .active,
+.links a:hover {
+    color: var(--primary-color);
+}
+
+.links .sub-links {
+    display: none;
+}
+
+.nav-content .divider {
+    height: 40%;
+    width: 1px;
+    background-color: rgb(235, 234, 234);
+}
+
+.nav-content i {
+    cursor: pointer;
+}
+
+.nav-content .nav-links :is(.menu-btn, .links .cancel-btn) {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    transform: translateY(-50%);
+    border: 2px solid rgb(233, 233, 233);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--black-color);
+    display: none;
+}
+
+.links i {
+    margin: 0 5px;
+}
+
+.links li {
+    position: relative;
+    transform: all 0.5s ease;
+}
+
+.links li .sub-links {
+    min-width: 150px;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    background-color: rgb(240, 240, 240);
+    top: 90px;
+    left: 0;
+    padding: 8px 0px;
+    transition: all 0.6s ease;
+    z-index: 1000;
+}
+
+.links li:hover .sub-links {
+    opacity: 1;
+    top: 75px;
+}
+
+.sub-links li {
+    padding: 5px 15px;
+    transition: all 0.5s ease;
+}
+
+.sub-links a {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1350px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .nav-content .nav-logo {
+        left: 30px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    nav {
+        height: 11vh;
+    }
+
+    .nav-content .nav-logo {
+        max-width: 150px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .nav-content .nav-links :is(.menu-btn, .links .cancel-btn) {
+        display: block;
+    }
+
+    .nav-links :is(.divider, .search) {
+        display: none;
+    }
+
+    .nav-links .links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: var(--white-color);
+        max-width: 400px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links.active .links {
+        right: 0%;
+    }
+
+    nav {
+        height: 10vh;
+    };
+
+    .nav-content .nav-logo {
+        max-width: 130px;
+    }
+
+    .links li {
+        height: 4%;
+    }
+
+    .links li:hover .sub-links {
+        top: 30px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    nav {
+        height: 9.8vh;
+    };
+    .nav-content .nav-logo {
+        max-width: 120px;
+    }
+}
