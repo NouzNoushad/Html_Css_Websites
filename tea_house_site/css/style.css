@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swapz");
 
 :root {
-    --playfair-font: "Playfair Display";
+    --playfair-font: 'Playfair Display', serif;
     --open-sans-font: "Open Sans", sans-serif;
     --max-width: 1150px;
     --white-color: #fff;
@@ -37,11 +37,11 @@ button {
     cursor: pointer;
 }
 
-img {
+/* img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-}
+} */
 
 .container {
     max-width: var(--max-width);
@@ -76,6 +76,10 @@ nav {
     transition: all 0.5s ease;
     height: 12vh;
     width: 100%;
+}
+
+nav.sticky {
+    box-shadow: 0px 1px 4px rgb(224, 224, 224);
 }
 
 nav .container {
@@ -147,7 +151,7 @@ nav .nav-content {
 
 .nav-content .nav-links :is(.menu-btn, .links .cancel-btn) {
     position: absolute;
-    top: 35px;
+    top: 32px;
     right: 30px;
     transform: translateY(-50%);
     border: 2px solid rgb(233, 233, 233);
@@ -251,6 +255,108 @@ nav .nav-content {
     border-radius: 50px;
 }
 
+/* About Section */
+
+.about .about-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-content .about-images {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.about-images .about-img {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.about-img .img-2 {
+    align-self: flex-end;
+}
+
+.about-images .about-img :is(.img-1, .img-4)
+{
+    width: 100%;
+}
+
+.about-images .about-img :is(.img-2, .img-3){
+    width: 50%;
+}
+
+.about-content .about-product {
+    width: 100%;
+    font-family: var(--open-sans-font);
+}
+
+.about-product .main-title h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 0.8rem;
+}
+
+.main-title h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: var(--playfair-font);
+}
+
+.main-title {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+}
+
+.main-title::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+}
+
+.main-title::after {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    bottom: -13px;
+    background-color: var(--black-color);
+    left: calc(25% - 13px);
+    border: 10px solid #FFFFFF;
+    border-radius: 28px;
+}
+
+.about-content .about-details {
+    display: flex;
+    gap: 15px;
+}
+
+.about-details img {
+    width: 30%;
+    height: 120px;
+}
+
+.about-details .details-box h3 {
+    font-family: var(--playfair-font);
+    padding-bottom: 0.5rem;
+}
+
+.about-content .divider {
+    height: 1px;
+    width: 100%;
+    background-color: rgb(224, 223, 223);
+    margin: 1.5rem 0;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1350px) {
@@ -322,6 +428,12 @@ nav .nav-content {
         font-size: 4rem;
         width: 80%;
     }
+
+    .about .about-content {
+        width: 80%;
+        margin: 0 auto;
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 760px) {
@@ -338,10 +450,23 @@ nav .nav-content {
         font-size: 3rem;
         width: 90%;
     }
+
+    .about .about-content  {
+        width: 95%;
+    }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 570px) {
     .home-content .title h1 {
         font-size: 2.5rem;
+    }
+
+    .about-content .about-details {
+        flex-direction: column;
+    }
+
+    .about-details img {
+        width: 100%;
+        height: auto;
     }
 }
