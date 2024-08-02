@@ -248,11 +248,14 @@ nav .nav-content {
     margin: 0 auto;
 }
 
-.home-content .explore {
-    color: var(--text-color);
+.button {
     font-size: 1rem;
     padding: 1rem 2rem;
     border-radius: 50px;
+}
+
+.home-content .explore {
+    color: var(--text-color);
 }
 
 /* About Section */
@@ -370,7 +373,7 @@ nav .nav-content {
     width: 50%;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .products .main-title::before {
@@ -413,6 +416,45 @@ nav .nav-content {
 
 .products-overlay {
     border-image: linear-gradient(rgba(236, 236, 236, 0.486), rgba(236, 236, 236, 0.486)) fill 1;
+}
+
+/* Blog Section */
+
+.blog .blog-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.blog-content .blog-image {
+    width: 40%;
+}
+
+.blog-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog-content .blog-details {
+    width: 50%;
+}
+
+.blog-details .blog-p p{
+    font-family: var(--open-sans-font);
+    margin-bottom: 1.5rem;
+}
+
+.blog-details .read-more {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transition: all 0.5s ease;
+}
+
+.blog-details .read-more:hover {
+    background-color: #a1d35f;
+    color: var(--text-color);
 }
 
 /* Media Queries */
@@ -504,6 +546,20 @@ nav .nav-content {
     .main-title h1 {
         font-size: 2rem;
     }
+
+    .blog .blog-content {
+        flex-direction: column;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .blog-content .blog-image {
+        width: 100%;
+    }
+
+    .blog-content .blog-details {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 760px) {
@@ -532,6 +588,10 @@ nav .nav-content {
     .products .main-title {
         width: 90%;
     }
+
+    .blog .blog-content {
+        max-width: 90%;
+    }
 }
 
 @media screen and (max-width: 570px) {
@@ -546,5 +606,9 @@ nav .nav-content {
     .about-details img {
         width: 100%;
         height: auto;
+    }
+
+    .blog .blog-content {
+        max-width: 100%;
     }
 }
