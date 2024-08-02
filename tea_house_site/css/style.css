@@ -294,11 +294,12 @@ nav .nav-content {
     font-family: var(--open-sans-font);
 }
 
-.about-product .main-title h4 {
+.main-title h4 {
     color: var(--primary-color);
     font-size: 1.3rem;
     font-style: italic;
     margin-bottom: 0.8rem;
+    font-family: var(--open-sans-font);
 }
 
 .main-title h1 {
@@ -357,6 +358,63 @@ nav .nav-content {
     margin: 1.5rem 0;
 }
 
+/* Products Section */
+
+.products {
+    background-image: url("../img/product-bg.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+.products .main-title {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.products .main-title::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.products .main-title::after {
+    left: calc(50% - 13px);
+}
+
+.swiper-slide .product-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide .product-details {
+    transform: translateY(-50%);
+    background-color: var(--white-color);
+    padding: 20px;
+    margin: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.product-details h3 {
+    font-size: 1.5rem;
+    font-family: var(--playfair-font);
+    color: var(--primary-color);
+}
+
+.product-details p {
+    font-family: var(--open-sans-font);
+}
+
+.products-overlay {
+    border-image: linear-gradient(rgba(236, 236, 236, 0.486), rgba(236, 236, 236, 0.486)) fill 1;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1350px) {
@@ -376,6 +434,10 @@ nav .nav-content {
 
     .nav-content .nav-logo {
         max-width: 150px;
+    }
+
+    .main-title h1 {
+        font-size: 2.3rem;
     }
 }
 
@@ -434,6 +496,14 @@ nav .nav-content {
         margin: 0 auto;
         flex-direction: column;
     }
+
+    .products .main-title {
+        width: 60%;
+    }
+
+    .main-title h1 {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width: 760px) {
@@ -453,6 +523,14 @@ nav .nav-content {
 
     .about .about-content  {
         width: 95%;
+    }
+
+    .main-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .products .main-title {
+        width: 90%;
     }
 }
 
