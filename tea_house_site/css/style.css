@@ -676,6 +676,66 @@ nav .nav-content {
     background-color: var(--primary-color);
 }
 
+/* Testimonial Section */
+
+.testimonial {
+    background-image: url("../img/testimonial-bg.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.testimonial .main-title h4 {
+    color: var(--white-color);
+}
+
+.swiper-slide .swiper-border{
+    max-width: 50%;
+    margin: 0 auto;
+    border: 2rem solid var(--primary-color);
+    padding: 3rem;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--open-sans-font);
+}
+
+.swiper-border .title {
+    text-align: center;
+}
+
+.swiper-border .client-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+.client-details .client-image {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.client-image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.client-details .client-info h3 {
+    font-family: var(--playfair-font);
+    margin-bottom: 0.5rem;
+}
+
+.client-info p {
+    color: var(--primary-color);
+}
+
 /* Animation */
 
 @keyframes pulse-animation {
@@ -704,6 +764,10 @@ nav .nav-content {
     .button {
         padding: 1rem 1.2rem;
     }
+
+    .swiper-slide .swiper-border {
+        max-width: 60%;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -717,6 +781,10 @@ nav .nav-content {
 
     .main-title h1 {
         font-size: 2.3rem;
+    }
+
+    .swiper-slide .swiper-border {
+        max-width: 70%;
     }
 }
 
@@ -752,8 +820,6 @@ nav .nav-content {
     nav {
         height: 10vh;
     }
-
-    ;
 
     .nav-content .nav-logo {
         max-width: 130px;
@@ -812,6 +878,10 @@ nav .nav-content {
     .store-items .store-item {
         width: calc(100% / 2 - 20px);
     }
+
+    .swiper-slide .swiper-border {
+        max-width: 80%;
+    }
 }
 
 @media screen and (max-width: 760px) {
@@ -852,6 +922,11 @@ nav .nav-content {
     .button {
         font-size: 0.9rem;
     }
+
+    .swiper-slide .swiper-border {
+        max-width: 90%;
+        padding: 2rem;
+    }
 }
 
 @media screen and (max-width: 570px) {
@@ -878,5 +953,10 @@ nav .nav-content {
 
     .features-content h2 {
         font-size: 2.1rem;
+    }
+
+    .swiper-slide .swiper-border {
+        max-width: 100%;
+        padding: 1.5rem;
     }
 }
