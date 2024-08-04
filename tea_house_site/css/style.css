@@ -368,19 +368,19 @@ nav .nav-content {
     background-position: left bottom;
 }
 
-.products .main-title {
+.main-title.center {
     width: 50%;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 3rem;
 }
 
-.products .main-title::before {
+.main-title.center::before {
     left: 50%;
     transform: translateX(-50%);
 }
 
-.products .main-title::after {
+.main-title.center::after {
     left: calc(50% - 13px);
 }
 
@@ -564,6 +564,120 @@ nav .nav-content {
     clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
 }
 
+/* Store Section */
+.store .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.store .store-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.store-items .store-item {
+    width: calc(100% / 3 - 20px);
+    position: relative;
+    cursor: pointer;
+}
+
+.store-item .store-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    font-family: var(--open-sans-font);
+    padding: 0px 20px;
+    transition: all 0.5s ease;
+}
+
+.store-details .store-ratings {
+    color: var(--primary-color);
+}
+
+.store-details h2 {
+    font-family: var(--playfair-font);
+}
+
+.store-details .store-img {
+    margin-bottom: 1rem;
+}
+
+.store-details .store-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.store-details .price {
+    font-size: 1.5rem;
+    font-family: var(--playfair-font);
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.store-item .store-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.store-buttons button {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--white-color);
+}
+
+.store-buttons i {
+    margin-left: 8px;
+}
+
+.store-buttons .more-button {
+    background-color: var(--primary-color);
+}
+
+.store-buttons .cart-button {
+    background-color: var(--black-color);
+}
+
+.store-item::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: #88b44e50;
+    transition: all 0.5s ease;
+}
+
+.store-item:hover::before {
+    opacity: 1;
+}
+
+.store-item:hover .store-buttons {
+    opacity: 1;
+}
+
+.store .view-more-button {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+/* Animation */
+
 @keyframes pulse-animation {
     0% {
         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
@@ -585,6 +699,10 @@ nav .nav-content {
 
     .nav-content .nav-logo {
         left: 30px;
+    }
+
+    .button {
+        padding: 1rem 1.2rem;
     }
 }
 
@@ -690,6 +808,10 @@ nav .nav-content {
     .features-content h2 {
         font-size: 2.2rem;
     }
+
+    .store-items .store-item {
+        width: calc(100% / 2 - 20px);
+    }
 }
 
 @media screen and (max-width: 760px) {
@@ -715,14 +837,21 @@ nav .nav-content {
         font-size: 1.8rem;
     }
 
-    .products .main-title {
+    .main-title.center {
         width: 90%;
     }
 
     .blog .blog-content {
         max-width: 90%;
     }
+
+    .store-items .store-item  {
+        width: 100%;
+    }
     
+    .button {
+        font-size: 0.9rem;
+    }
 }
 
 @media screen and (max-width: 570px) {
