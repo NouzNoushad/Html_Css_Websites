@@ -8,6 +8,7 @@
     --black-color: #000;
     --primary-color: #88B44E;
     --text-color: #252C30;
+    --footer-bg: #252C30;
 }
 
 *,
@@ -689,7 +690,7 @@ nav .nav-content {
     color: var(--white-color);
 }
 
-.swiper-slide .swiper-border{
+.swiper-slide .swiper-border {
     max-width: 50%;
     margin: 0 auto;
     border: 2rem solid var(--primary-color);
@@ -777,6 +778,147 @@ nav .nav-content {
     color: var(--white-color);
 }
 
+/* Footer Section */
+
+footer {
+    background-color: var(--footer-bg);
+}
+
+footer .footer-top {
+    padding: 4rem 0;
+}
+
+.footer .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-top i {
+    color: var(--primary-color);
+    margin-right: 0.4rem;
+}
+
+.footer-top .footer-details {
+    width: calc(100% / 4 - 20px);
+    color: #ACB7AE;
+    font-family: var(--open-sans-font);
+}
+
+.footer-details h3 {
+    font-family: var(--playfair-font);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-details .location-info {
+    margin-bottom: 1rem;
+}
+
+.location-info .location {
+    margin-bottom: 0.6rem;
+}
+
+.footer-details .social-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links .social-i {
+    height: 40px;
+    width: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: relative;
+}
+
+.footer-details .social-links i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    color: var(--white-color);
+}
+
+.footer-links .footer-link {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.footer-links .footer-link:hover {
+    letter-spacing: 0.08rem;
+    color: var(--white-color);
+}
+
+.hours .day {
+    margin-bottom: 0.4rem;
+}
+
+.hours .time {
+    margin-bottom: 0.4rem;
+    color: var(--white-color);
+    font-family: var(--playfair-font);
+}
+
+.footer-details p {
+    margin-bottom: 20px;
+}
+
+.footer-details .email-input {
+    height: 100%;
+    border: 1px solid var(--white-color);
+    border-radius: 5px;
+    display: flex;
+}
+
+.email-input input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.email-input input::placeholder {
+    font-size: 1rem;
+}
+
+.email-input button {
+    height: auto;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    margin: 6px;
+    font-size: 1rem;
+    font-family: var(--open-sans-font);
+}
+
+.footer-bottom {
+    background-color: #252525;
+    color: #ACB7AE;
+    font-family: var(--open-sans-font);
+}
+
+.footer-bottom .container {
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.footer-bottom a {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
 /* Animation */
 
 @keyframes pulse-animation {
@@ -796,6 +938,10 @@ nav .nav-content {
 @media screen and (max-width: 1350px) {
     .container {
         padding: 0 30px;
+    }
+
+    .footer-bottom .container {
+        padding: 1.5rem 30px;
     }
 
     .nav-content .nav-logo {
@@ -916,7 +1062,8 @@ nav .nav-content {
         font-size: 2.2rem;
     }
 
-    .store-items .store-item {
+    .store-items .store-item,
+    .footer-top .footer-details {
         width: calc(100% / 2 - 20px);
     }
 
@@ -960,10 +1107,11 @@ nav .nav-content {
         max-width: 90%;
     }
 
-    .store-items .store-item  {
+    .store-items .store-item,
+    .footer-top .footer-details {
         width: 100%;
     }
-    
+
     .button {
         font-size: 0.9rem;
     }
@@ -980,6 +1128,10 @@ nav .nav-content {
     .contact-content .contact-links {
         flex-direction: column;
         gap: 30px;
+    }
+
+    .footer-bottom .container {
+        flex-direction: column;
     }
 }
 
@@ -1001,7 +1153,7 @@ nav .nav-content {
         max-width: 100%;
     }
 
-    .features-items .features-item ,
+    .features-items .features-item,
     .contact .contact-content {
         width: 100%;
     }
